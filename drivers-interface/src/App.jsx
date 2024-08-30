@@ -2,6 +2,7 @@ import React from 'react';
 import Driver from './components/Driver';
 import HomePage from './components/HomePage';
 import Orders from './components/Orders';
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -26,7 +27,25 @@ function App() {
             <SignedOut>
               <RedirectToSignIn />
             </SignedOut>
+
           </>
+
+        }
+      />
+        <Route
+        path="/track-order"
+        element={
+          <>
+            <SignedIn>
+              <Driver/>
+            </SignedIn>
+
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+
+          </>
+
         }
       />
     </>
