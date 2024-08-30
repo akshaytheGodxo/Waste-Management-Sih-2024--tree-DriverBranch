@@ -4,7 +4,6 @@ import Image2 from '../../assets/collaboration.jpeg'
 import Image3 from '../../assets/Customer_care.jpeg'
 import Image4 from '../../assets/Our_products.webp'
 import Image5 from '../../assets/Reward_points.webp'
-import Image6 from '../../assets/plastic-waste.jpg'
 
 const Services = () => {
     return (
@@ -83,12 +82,12 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque l
                     </div>
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img 
-                            src={Image6}
+                            src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU=" 
                             alt="Rice Papad" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Waste Collection</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
                             <p className="text-gray-700 text-base">
 Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>

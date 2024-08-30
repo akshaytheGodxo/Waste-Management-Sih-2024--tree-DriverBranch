@@ -88,7 +88,7 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque l
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Waste Collection</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
                             <p className="text-gray-700 text-base">
 Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>

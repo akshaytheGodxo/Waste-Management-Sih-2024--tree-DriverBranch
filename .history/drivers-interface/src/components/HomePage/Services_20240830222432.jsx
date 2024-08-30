@@ -68,7 +68,7 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque l
                     <div className="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full">
                         <div className="text-center text-white font-medium">Special product</div>
                         <img 
-                            src={Image5}
+                            src={Image6}
                             alt="Flavoured Spaghetti" 
                             className="w-full h-64 object-cover rounded-t-lg" 
                         />
@@ -83,12 +83,12 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque l
                     </div>
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img 
-                            src={Image6}
+                            src={Image5}
                             alt="Rice Papad" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Waste Collection</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
                             <p className="text-gray-700 text-base">
 Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>
