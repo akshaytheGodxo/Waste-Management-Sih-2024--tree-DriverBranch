@@ -2,8 +2,8 @@ import React from 'react';
 
 const ContactUs = () => {
   return (
-    <section className="bg-gray-100">
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-20 lg:px-8">
+    <section className="py-12">
+      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:py-10 lg:px-8 bg-gray-300">
         <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-900" id="contactUs">
             Visit Our Location
@@ -13,15 +13,15 @@ const ContactUs = () => {
         <div className="mt-8 lg:mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <div className="max-w-full mx-auto rounded-lg overflow-hidden">
+              <div className="max-w-full mx-auto rounded-lg overflow-hidden bg-white">
                 <div className="border-t border-gray-200 px-6 py-4">
                   <h3 className="text-lg font-bold text-gray-900">Contact</h3>
                   <p className="mt-1 font-bold text-gray-600">
                     <a href="tel:+123">Phone: +91 123456789</a>
                   </p>
                   <a className="flex m-1" href="tel:+919823331842">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-between h-10 w-30 rounded-md bg-indigo-500 text-white p-2">
+                    <div className="inline mt-2">
+                      <div className="flex items-center justify-between h-10 w-30 rounded-md bg-green-600 hover:bg-green-900 text-white p-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -46,7 +46,7 @@ const ContactUs = () => {
                   <p className="mt-1 text-gray-600">Sale galli, 60 foot road, Latur</p>
                 </div>
                 <div className="border-t border-gray-200 px-6 py-4">
-                  <h3 className="text-lg font-medium text-gray-900">Hours</h3>
+                  <h3 className="text-lg font-medium text-gray-900">Time</h3>
                   <p className="mt-1 text-gray-600">Monday - Sunday : 2pm - 9pm</p>
                 </div>
               </div>

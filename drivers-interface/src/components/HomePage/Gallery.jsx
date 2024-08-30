@@ -13,13 +13,14 @@ Our Service Location
       </div>
 
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        {/* Repeat this div for each image */}
+        
         <div className="group relative">
           <img
             src={Image1}
             alt="Image 1"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          
         </div>
         <div className="group relative">
           <img

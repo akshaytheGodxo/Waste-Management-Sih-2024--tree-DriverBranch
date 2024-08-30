@@ -24,6 +24,7 @@ function NavBar() {
         { name: 'Home', link: '/' },
         { name: 'Orders', link: '/orders' },
         { name: 'Store', link: '/store' },
+        { name: 'Contact Us', link: '#' },
     ];
 
     const handleOpenNavMenu = (event) => {
