@@ -9,8 +9,8 @@ const AboutUs = () => {
                         <div className="max-w-lg">
                             <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
                             <p className="mt-4 text-gray-600 text-lg">
-                            Avrutti, meaning 'Cycle,' represents a step towards a cleaner and greener India by promoting recycling, reuse, and the responsible disposal of plastics. We offer innovative services such as AI-based waste classification and location detection, making waste management more efficient. Additionally, we provide redeemable points for the submission of large quantities of plastic waste. We are also partnering with other companies to recycle vast amounts of plastic, generating revenue for future development. One of our core features is offering a range of products made from recycled materials. Join us in our mission to reduce plastic waste and embrace sustainable living for a healthier environment!
-
+                            At Avrutti, our focus is on sustainability and recycling. We are proud to introduce our own line, 'Avrutti Products,' which features a range of eco-friendly items made from recycled materials.
+                            
                             </p>
                         </div>
                         <div className="mt-12 md:mt-0">

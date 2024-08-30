@@ -9,7 +9,7 @@ const Gallery = () => {
   return (
     <section className="text-gray-700 body-font" id="gallery">
       <div className="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">
-Our Service Location
+        Gallery
       </div>
 
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">

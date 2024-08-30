@@ -17,7 +17,7 @@ const HomePage = () => {
         <Gallery/>
         <ContactUs/>
         <Footer/>
-        <Chat />
+        <Chat className="w-16 h-16 rounded-full"/>
     </div>
   )
 }
