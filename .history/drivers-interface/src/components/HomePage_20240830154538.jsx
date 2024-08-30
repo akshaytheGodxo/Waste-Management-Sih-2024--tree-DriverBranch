@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './HomePage/NavBar'
 import Hero from './HomePage/Hero'
+import OurServices from './HomePage/OurServices'
 import Services from './HomePage/Services'
 const HomePage = () => {
     return (
