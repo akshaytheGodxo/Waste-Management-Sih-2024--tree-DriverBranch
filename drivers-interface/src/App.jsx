@@ -1,15 +1,31 @@
-import { useState } from 'react'
+import React ,{ useState } from 'react'
 import Driver from './components/Driver'
-import './App.css'
-
+import HomePage from './components/HomePage';
+import Orders from './components/Orders';
+import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 function App() {
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+    {
+      path: "/orders",
+      element: <Orders />,
+    },
+    {
+      path: "/track-order",
+      element: <Driver />,
+    },
+
+  ])
+  
   return (
     <>
-    <h1>Map Component for the driver</h1>
-    <Driver />
+      <RouterProvider router={router}/>
     </>
   )
 }
 
-export default App
+export default App;
