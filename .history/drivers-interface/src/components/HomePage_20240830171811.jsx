@@ -5,7 +5,6 @@ import Services from './HomePage/Services'
 import AboutUs from './HomePage/AboutUs'
 import Gallery from './HomePage/Gallery'
 import ContactUs from './HomePage/ContactUs'
-import Footer from './HomePage/Footer'
 const HomePage = () => {
     return (
     <div>
@@ -15,7 +14,6 @@ const HomePage = () => {
         <AboutUs/>
         <Gallery/>
         <ContactUs/>
-        <Footer/>
     </div>
   )
 }
