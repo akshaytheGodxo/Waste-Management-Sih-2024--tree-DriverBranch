@@ -15,24 +15,8 @@ function App() {
     createRoutesFromElements(
       <>
         <Route index element={<HomePage/>} />
-        <Route
-        path="/orders"
-        element={
-          <>
-            <SignedIn>
-              <Orders/>
-            </SignedIn>
-
-            <SignedOut>
-              <RedirectToSignIn />
-            </SignedOut>
-          </>
-        }
-      />
-    </>
-  )
-);
-
+      </>
+    )
 
   //   {
   //     path: "/",
