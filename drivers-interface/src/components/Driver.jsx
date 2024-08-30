@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { useLocation } from 'react-router-dom';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import { useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet-routing-machine';
@@ -8,7 +10,7 @@ const RoutingMachine = ({ start, end }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (!map) return;
+    if (!map || !start || !end) return;
 
     const routingControl = L.Routing.control({
       waypoints: [
@@ -27,9 +29,7 @@ const RoutingMachine = ({ start, end }) => {
 const geocodeLocation = async (location) => {
   try {
     const response = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-        location
-      )}`
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`
     );
     const data = await response.json();
 
@@ -49,9 +49,9 @@ const geocodeLocation = async (location) => {
 };
 
 const MapComponent = () => {
+  const location = useLocation();
   const [startLocation, setStartLocation] = useState(null);
   const [endLocation, setEndLocation] = useState(null);
-  const [destination, setDestination] = useState('');
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -66,24 +66,20 @@ const MapComponent = () => {
     );
   }, []);
 
-  const handleDestinationSubmit = async () => {
-    const coordinates = await geocodeLocation(destination);
-    if (coordinates) {
-      setEndLocation([coordinates.latitude, coordinates.longitude]);
-    } else {
-      alert('Destination not found');
-    }
-  };
+  useEffect(() => {
+    const fetchEndLocation = async () => {
+      if (location.state && location.state.location) {
+        const coordinates = await geocodeLocation(location.state.location);
+        if (coordinates) {
+          setEndLocation([coordinates.latitude, coordinates.longitude]);
+        }
+      }
+    };
+    fetchEndLocation();
+  }, [location.state]);
 
   return (
     <div>
-      <input
-        type="text"
-        value={destination}
-        onChange={(e) => setDestination(e.target.value)}
-        placeholder="Enter destination"
-      />
-      <button onClick={handleDestinationSubmit}>Show Route</button>
       <MapContainer
         center={startLocation || [51.505, -0.09]} // Initial center
         zoom={13}

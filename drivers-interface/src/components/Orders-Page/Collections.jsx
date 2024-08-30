@@ -7,6 +7,7 @@ import { Popover } from '@mui/material';
 const Collections = () => {
   const [orders, setOrders] = useState([]);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedOrder, setSelectedOrder] = useState(null); // Store the selected order
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -21,12 +22,14 @@ const Collections = () => {
     fetchOrders();
   }, []);
 
-  const handlePopupOpen = (event) => {
+  const handlePopupOpen = (event, order) => {
     setAnchorEl(event.currentTarget);
+    setSelectedOrder(order); // Set the selected order
   };
 
   const handlePopupClose = () => {
     setAnchorEl(null);
+    setSelectedOrder(null); // Clear the selected order when closing the popup
   };
 
   const open = Boolean(anchorEl);
@@ -42,14 +45,14 @@ const Collections = () => {
                 {order.name}
                 <Button
                   aria-describedby={id}
-                  onClick={handlePopupOpen}
+                  onClick={(event) => handlePopupOpen(event, order)} // Pass the order to the handler
                   sx={{ marginLeft: 'auto', backgroundColor: '#75ba81', color: 'white' }}
                 >
                   See info
                 </Button>
                 <Popover
                   id={id}
-                  open={open}
+                  open={Boolean(anchorEl && selectedOrder === order)}
                   anchorEl={anchorEl}
                   onClose={handlePopupClose}
                   anchorOrigin={{
@@ -57,7 +60,7 @@ const Collections = () => {
                     horizontal: 'left',
                   }}
                 >
-                  <OrderDetails order={order} />
+                  {selectedOrder && <OrderDetails order={selectedOrder} />} {/* Pass the selected order */}
                 </Popover>
               </Typography>
               <Typography variant="body2">{order.location}</Typography>

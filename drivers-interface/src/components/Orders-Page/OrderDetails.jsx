@@ -8,14 +8,13 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 export default function OrderDetails({ order }) {
-
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="Order image"
         height="140"
-        image={order.order_image} // Replace this with your actual image source
+        image={order.image} // Replace this with your actual image source
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -27,11 +26,15 @@ export default function OrderDetails({ order }) {
             {order.location}
           </Typography>
         </Typography>
-        
       </CardContent>
       <CardActions>
-        <Link to="/track-order">
-          <Button size="small" sx={{ backgroundColor: '#75ba81', color: 'white' }}>Track</Button>
+        <Link
+          to={`/track-order`}
+          state={{ location: order.location }} // Pass only the location
+        >
+          <Button size="small" sx={{ backgroundColor: '#75ba81', color: 'white' }}>
+            Track
+          </Button>
         </Link>
       </CardActions>
     </Card>
