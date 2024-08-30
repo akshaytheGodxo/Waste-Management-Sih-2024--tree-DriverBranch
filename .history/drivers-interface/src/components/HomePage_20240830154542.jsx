@@ -8,6 +8,7 @@ const HomePage = () => {
         <NavBar /> 
         <Hero/>
         <Services/>
+        <h1>Landing Page in development</h1>
     </div>
   )
 }
