@@ -20,7 +20,7 @@ function App() {
         element={
           <>
             <SignedIn>
-              <Orders/>
+              <Dashboard />
             </SignedIn>
 
             <SignedOut>
