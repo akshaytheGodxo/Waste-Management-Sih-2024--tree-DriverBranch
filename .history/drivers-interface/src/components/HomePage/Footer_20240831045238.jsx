@@ -30,7 +30,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="mt-8 text-base leading-6 text-center text-gray-400">
-          © The Avrutti Company 
+          © 2021 SomeCompany, Inc. All rights reserved.
         </p>
       </div>
     </section>
