@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <section className="bg-slate-800">
+    <section className="bg-black-100">
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           {['About', 'Blog', 'Team', 'Pricing', 'Contact', 'Terms'].map((item) => (
@@ -30,7 +30,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="mt-8 text-base leading-6 text-center text-gray-400">
-          © The Avrutti Company 
+          © 2021 SomeCompany, Inc. All rights reserved.
         </p>
       </div>
     </section>
