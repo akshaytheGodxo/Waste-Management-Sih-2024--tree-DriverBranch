@@ -20,7 +20,7 @@ Our Service Location
             alt="Image 1"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
-          
+          <h2 className='font-bold text-center mt-2'>Mumbai</h2>
         </div>
         <div className="group relative">
           <img
@@ -28,6 +28,7 @@ Our Service Location
             alt="Image 2"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Lucknow</h2>
         </div>
         <div className="group relative">
           <img
@@ -35,6 +36,7 @@ Our Service Location
             alt="Image 3"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Hyderabad</h2>
         </div>
         <div className="group relative">
           <img
@@ -42,6 +44,7 @@ Our Service Location
             alt="Image 4"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Delhi</h2>
         </div>
       </div>
     </section>

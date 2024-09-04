@@ -26,6 +26,7 @@ export default function OrderDetails({ order }) {
             {order.location}
           </Typography>
         </Typography>
+        
       </CardContent>
       <CardActions>
         <Link

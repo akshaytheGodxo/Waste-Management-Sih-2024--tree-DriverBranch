@@ -1,27 +1,72 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import { useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet-routing-machine';
+import axios from 'axios';
 
-const RoutingMachine = ({ start, end }) => {
+// Custom color and styles for the divIcon
+const myCustomColour = '#583470';
+
+const markerHtmlStyles = `
+  background-color: ${myCustomColour};
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  left: -1.5rem;
+  top: -1.5rem;
+  position: relative;
+  border-radius: 3rem 3rem 0;
+  transform: rotate(45deg);
+  border: 1px solid #FFFFFF;
+`;
+
+const createCustomIcon = (color) => {
+  const iconHtmlStyles = `
+    background-color: ${color};
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    left: -1.5rem;
+    top: -1.5rem;
+    position: relative;
+    border-radius: 3rem 3rem 0;
+    transform: rotate(45deg);
+    border: 1px solid #FFFFFF;
+  `;
+
+  return L.divIcon({
+    className: "my-custom-pin",
+    iconAnchor: [0, 24],
+    labelAnchor: [-6, 0],
+    popupAnchor: [0, -36],
+    html: `<span style="${iconHtmlStyles}" />`
+  });
+};
+
+const RoutingMachine = ({ start, destinations }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (!map || !start || !end) return;
+    if (!map || !start || !destinations.length) return;
 
     const routingControl = L.Routing.control({
       waypoints: [
         L.latLng(start[0], start[1]),
-        L.latLng(end[0], end[1]),
+        ...destinations.map((dest) => L.latLng(dest[0], dest[1])),
       ],
       routeWhileDragging: true,
+      createMarker: (i, waypoint, n) => {
+        const color = i === 0 ? 'green' : i === n - 1 ? 'red' : 'blue'; // Different color markers
+        return L.marker(waypoint.latLng, {
+          icon: createCustomIcon(color),
+        });
+      },
     }).addTo(map);
 
     return () => map.removeControl(routingControl);
-  }, [map, start, end]);
+  }, [map, start, destinations]);
 
   return null;
 };
@@ -49,9 +94,8 @@ const geocodeLocation = async (location) => {
 };
 
 const MapComponent = () => {
-  const location = useLocation();
   const [startLocation, setStartLocation] = useState(null);
-  const [endLocation, setEndLocation] = useState(null);
+  const [endLocations, setEndLocations] = useState([]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -67,16 +111,28 @@ const MapComponent = () => {
   }, []);
 
   useEffect(() => {
-    const fetchEndLocation = async () => {
-      if (location.state && location.state.location) {
-        const coordinates = await geocodeLocation(location.state.location);
-        if (coordinates) {
-          setEndLocation([coordinates.latitude, coordinates.longitude]);
-        }
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/orders');
+        const orders = response.data;
+
+        const locationPromises = orders.map(async (order) => {
+          const coordinates = await geocodeLocation(order.location);
+          if (coordinates) {
+            return [coordinates.latitude, coordinates.longitude];
+          }
+          return null;
+        });
+
+        const locations = await Promise.all(locationPromises);
+        setEndLocations(locations.filter((loc) => loc !== null));
+      } catch (error) {
+        console.error('Error fetching orders:', error);
       }
     };
-    fetchEndLocation();
-  }, [location.state]);
+
+    fetchOrders();
+  }, []);
 
   return (
     <div>
@@ -89,8 +145,14 @@ const MapComponent = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        {startLocation && endLocation && (
-          <RoutingMachine start={startLocation} end={endLocation} />
+        {startLocation && endLocations.length > 0 && (
+          <>
+            <Marker position={startLocation} icon={createCustomIcon('green')} />
+            {endLocations.map((location, index) => (
+              <Marker key={index} position={location} icon={createCustomIcon('blue')} />
+            ))}
+            <RoutingMachine start={startLocation} destinations={endLocations} />
+          </>
         )}
       </MapContainer>
     </div>

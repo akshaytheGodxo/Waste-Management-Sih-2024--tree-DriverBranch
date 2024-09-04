@@ -26,7 +26,25 @@ function App() {
             <SignedOut>
               <RedirectToSignIn />
             </SignedOut>
+
           </>
+
+        }
+      />
+        <Route
+        path="/track-order"
+        element={
+          <>
+            <SignedIn>
+              <Driver/>
+            </SignedIn>
+
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+
+          </>
+
         }
       />
     </>
