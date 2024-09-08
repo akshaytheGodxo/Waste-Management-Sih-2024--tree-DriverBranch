@@ -1,41 +1,50 @@
 import React from 'react';
+import Image1 from '../../assets/Mumbai.jpg'
+import Image2 from '../../assets/Lucknow.jpg'
+import Image3 from '../../assets/Hydrabad.jpg'
+import Image4 from '../../assets/Delhi.jpeg'
+
 
 const Gallery = () => {
   return (
     <section className="text-gray-700 body-font" id="gallery">
       <div className="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">
-        Gallery
+Our Service Location
       </div>
 
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        {/* Repeat this div for each image */}
+        
         <div className="group relative">
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+            src={Image1}
             alt="Image 1"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Mumbai</h2>
         </div>
         <div className="group relative">
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+            src={Image2}
             alt="Image 2"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Lucknow</h2>
         </div>
         <div className="group relative">
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+            src={Image3}
             alt="Image 3"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Hyderabad</h2>
         </div>
         <div className="group relative">
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+            src={Image4}
             alt="Image 4"
             className="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
+          <h2 className='font-bold text-center mt-2'>Delhi</h2>
         </div>
       </div>
     </section>

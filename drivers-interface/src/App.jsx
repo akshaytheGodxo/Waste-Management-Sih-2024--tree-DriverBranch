@@ -3,6 +3,7 @@ import Driver from './components/Driver';
 import HomePage from './components/HomePage';
 import Orders from './components/Orders';
 import DriverNav from './components/Google-Maps/GoogleMap';
+=======
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -23,6 +24,62 @@ function App() {
             <SignedIn>
               <Orders/>
             </SignedIn>
+=======
+
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+
+          </>
+
+        }
+      />
+        <Route
+        path="/track-order"
+        element={
+          <>
+            <SignedIn>
+              <Driver/>
+            </SignedIn>
+
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+
+          </>
+
+        }
+      />
+    </>
+  )
+);
+
+
+  //   {
+  //     path: "/",
+  //     element: (
+  //       <SignedOut>
+  //         <HomePage />
+  //       </SignedOut>
+  //     ),
+  //   },
+  //   {
+  //     path: "/orders",
+  //     element: (
+  //       <SignedIn>
+  //         <Orders />
+  //       </SignedIn>
+  //     ),
+  //   },
+  //   {
+  //     path: "/track-order",
+  //     element: (
+  //       <SignedIn>
+  //         <Driver />
+  //       </SignedIn>
+  //     ),
+  //   },
+  // ]);
 
             <SignedOut>
               <RedirectToSignIn />

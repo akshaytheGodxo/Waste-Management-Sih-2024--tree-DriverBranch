@@ -1,104 +1,112 @@
-import React from 'react';
-
+import React, {useEffect} from 'react';
+import Image1 from '../../assets/AI_services.png'
+import Image2 from '../../assets/collaboration.jpeg'
+import Image3 from '../../assets/Customer_care.jpeg'
+import Image4 from '../../assets/Our_products.webp'
+import Image5 from '../../assets/Reward_points.webp'
+import Image6 from '../../assets/plastic-waste.jpg'
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Services = () => {
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 700,
+          easing: "ease-out-cubic",
+        });
+      }, []);
     return (
         <section className="py-10" id="services">
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center" data-aos="fade-down">Our Services</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="zoom-in">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" 
+                            src={Image1} 
                             alt="wheat flour grinding" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">AI Powered</h3>
                             <p className="text-gray-700 text-base">
-                                Our wheat flour grinding service provides fresh, high-quality flour to businesses and individuals in the area. We use state-of-the-art equipment to grind wheat into flour, and we offer a variety of flours to meet the needs of our customers.
+                            
+                            Avrutti introduces an AI-powered website designed to aid in plastic segregation by scanning waste and categorizing it into different types. Additionally, our AI technology helps in accessing and identifying locations for effective waste management.
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww" 
+                            src={Image2}
                             alt="Gram Flour" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Collaboration</h3>
                             <p className="text-gray-700 text-base">
-                                Our gram flour is perfect for a variety of uses, including baking, cooking, and making snacks. It is also a good source of protein and fiber. Our gram flour grinding service is a convenient and affordable way to get the freshest gram flour possible.
+                            To expand our reach and achieve greater success, we are excited to collaborate with various companies to promote recycling and sustainability. These partnerships will enhance our efforts in recycling products and creating a more eco-friendly future together.
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://image2.jdomni.in/banner/13062021/D2/99/0D/48D7F4AFC48C041DC8D80432E9_1623562146900.png?output-format=webp" 
+                            src={Image3}
                             alt="Jowar Flour" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Customer Care</h3>
                             <p className="text-gray-700 text-base">
-                                Our jowar grinding service is a convenient and affordable way to get fresh, high-quality jowar flour. We use state-of-the-art equipment to grind jowar into a fine powder, which is perfect for making roti, bread, and other dishes.
-                                <details>
-                                    <summary>Read More</summary>
-                                    <p>Our jowar flour is also a good source of protein and fiber, making it a healthy choice for your family.</p>
-                                </details>
+Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            src={Image4}
                             alt="Chilli Pounding" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Chilli Pounding</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Our Products</h3>
                             <p className="text-gray-700 text-base">
-                                We specialize in the production of high-quality chili powder. Our chili powder is made from the finest, freshest chilies, and we use traditional pounding methods to ensure that our chili powder retains its full flavor and aroma.
-                                <details>
-                                    <summary>Read More</summary>
-                                    <p>We offer a variety of chili powder products, including mild, medium, and hot. We also offer custom blends to meet the specific needs of our customers.</p>
-                                </details>
+                            As part of our commitment to sustainability, we are excited to introduce a new service: reward coins! You will earn reward points for every plastic waste submission, which can later be redeemed to purchase our recycled products.
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full">
-                        <div className="text-center text-white font-medium">Special product</div>
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmF3JTIwc3BhZ2hldHRpfGVufDB8fDB8fHww" 
+                            src={Image5}
                             alt="Flavoured Spaghetti" 
                             className="w-full h-64 object-cover rounded-t-lg" 
                         />
                         <div className="p-6 bg-white text-center rounded-b-lg md:min-h-full">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Flavoured Spaghetti</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Reward Points</h3>
                             <p className="text-gray-700 text-base">
-                                <span className="font-medium underline">Our speciality is</span> Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to tantalize your taste buds. We use only the freshest ingredients. Our flavors include: Mango, spinach.
+                                <span className="font-medium underline">Our speciality is</span> Lorem Ipsum Generator
+
+Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-110"  >
                         <img 
-                            src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU=" 
+                            src={Image6}
                             alt="Rice Papad" 
                             className="w-full h-64 object-cover" 
                         />
                         <div className="p-6 text-center">
-                            <h3 className="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
+                            <h3 className="text-xl font-medium text-gray-800 mb-2">Waste Collection</h3>
                             <p className="text-gray-700 text-base">
-                                Our company produces high-quality rice papad that is made with the finest ingredients. We use traditional methods to make our papad, which gives it a unique flavor and texture. Our papad is also gluten-free and vegan.
-                                <details>
-                                    <summary>Read More</summary>
-                                    <p>We offer a variety of rice papad flavors, including plain, salted, spicy, and flavored. We also offer a variety of sizes and shapes to choose from. Our papad is available in bulk or in individual packages.</p>
-                                </details>
+Lorem ipsum odor amet, consectetuer adipiscing elit. Laoreet consectetur neque lacus blandit bibendum cras sociosqu. Phasellus tellus sagittis bibendum eget nullam. Euismod ut ultricies purus; netus sem curae. Nibh tellus nibh; praesent ac felis quisque. Tempus vitae litora ultricies etiam facilisi malesuada. Faucibus litora convallis convallis phasellus sapien ornare.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <script>
+  AOS.init();
+</script>
         </section>
     );
 };
